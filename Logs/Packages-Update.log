@@ -43,3 +43,11 @@ The following packages were added:
   com.unity.textmeshpro@2.1.1
   com.unity.timeline@1.2.17
   com.unity.ugui@1.0.0
+
+=== Mon Feb 22 08:38:23 2021
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.render-pipelines.universal@7.3.1
