@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 5241354611271562910}
   - component: {fileID: 5241354611271562908}
   - component: {fileID: 5241354611271562911}
+  - component: {fileID: 5947786502447236495}
   m_Layer: 0
   m_Name: SwordShield
   m_TagString: Untagged
@@ -305,6 +306,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d39c80a5eedbe4490ab03b3f0d0b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  maximumHealth: 0
+--- !u!114 &5947786502447236495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241354611271562905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c16424a3d95cd41bc6bd2e388297b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeSpeed: 0
+  walkSpeed: 0
+  attackSpeed: 0
+  attackRange: 0
 --- !u!1 &5241354611791990273
 GameObject:
   m_ObjectHideFlags: 0

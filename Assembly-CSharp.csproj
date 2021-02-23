@@ -76,6 +76,7 @@
     <Compile Include="Assets\HealthBarController.cs" />
     <Compile Include="Assets\SelectDict.cs" />
     <Compile Include="Assets\UnitManager.cs" />
+    <Compile Include="Assets\movementController.cs" />
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\Toby Fredson\Rocky Hills Environment - Light Pack\Legacy Project\Legacy Project_Read Me!.txt" />
     <Reference Include="UnityEngine">
@@ -615,14 +616,35 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TerrainTools">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -636,36 +658,6 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools.Editor">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
@@ -674,6 +666,15 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TerrainTools.Editor">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>I:/GameEngine/unity project/MyFirstRTS/My-RTS-Game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

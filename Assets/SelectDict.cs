@@ -21,7 +21,7 @@ public class SelectDict : MonoBehaviour
         foreach(KeyValuePair<int, GameObject> pair in selectDic) {
             if(pair.Value != null)
             {
-
+                pair.Value.GetComponent<UnitManager>().unSelect();
             }
         }
         selectDic.Clear();

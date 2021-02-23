@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UnitManager : MonoBehaviour
 {
+    public float health;
+    public float maximumHealth;
+
     int group;
     bool selected;
 
@@ -32,13 +35,13 @@ public class UnitManager : MonoBehaviour
         
     }
 
-    void select()
+    public void select()
     {
         selected = true;
         line.enabled = true;
     }
 
-    void unSelect()
+    public void unSelect()
     {
         selected = false;
         line.enabled = false;
