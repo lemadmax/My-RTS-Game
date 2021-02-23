@@ -26,7 +26,8 @@ public class UnitManager : MonoBehaviour
         line.endWidth = 0.3f;
         line.transform.localPosition.Set(0.0f, 0.2f, 0.0f);
         CreatePoints();
-        line.enabled = true;
+        line.enabled = false;
+        group = 0;
     }
 
     // Update is called once per frame
@@ -35,13 +36,18 @@ public class UnitManager : MonoBehaviour
         
     }
 
-    public void select()
+    public int GetGroup()
+    {
+        return group;
+    }
+
+    public void Select()
     {
         selected = true;
         line.enabled = true;
     }
 
-    public void unSelect()
+    public void UnSelect()
     {
         selected = false;
         line.enabled = false;

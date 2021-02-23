@@ -76,6 +76,7 @@
     <Compile Include="Assets\HealthBarController.cs" />
     <Compile Include="Assets\SelectDict.cs" />
     <Compile Include="Assets\UnitManager.cs" />
+    <Compile Include="Assets\Utils.cs" />
     <Compile Include="Assets\movementController.cs" />
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\Toby Fredson\Rocky Hills Environment - Light Pack\Legacy Project\Legacy Project_Read Me!.txt" />
