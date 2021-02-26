@@ -17,6 +17,12 @@ public class GlobalSelection : MonoBehaviour
     Vector2[] corners;
     Vector3[] verts;
     Vector3[] vecs;
+
+    public bool IsUnitSelected()
+    {
+        return !selectTable.IsEmpty();
+    }
+
     void Start()
     {
         selectTable = GetComponent<SelectDict>();
@@ -49,6 +55,7 @@ public class GlobalSelection : MonoBehaviour
                     hitInfo.transform.gameObject.tag == "Unit" && 
                     hitInfo.transform.gameObject.GetComponent<UnitManager>().GetGroup() == 0)
                 {
+
                     if(Input.GetKey(KeyCode.LeftShift))
                     {
                         selectTable.Select(hitInfo.transform.gameObject);

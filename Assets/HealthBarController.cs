@@ -16,14 +16,12 @@ public class HealthBarController : MonoBehaviour
     void Update()
     {
         SetOrientation();
-        bar.localScale.Set((float)unitManager.health / (float)unitManager.maximumHealth, 1.0f, 1.0f);
+        bar.transform.localScale = new Vector3((float)unitManager.health / (float)unitManager.maximumHealth, 1.0f, 1.0f);
     }
 
     void SetOrientation()
     {
-        Vector3 temp = (Camera.main.transform.position - transform.position);
-        temp.z = 0.0f;
         transform.right = -Camera.main.transform.right;
-        transform.LookAt(temp);
+        transform.forward = -Camera.main.transform.forward;
     }
 }

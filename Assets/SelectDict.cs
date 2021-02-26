@@ -6,6 +6,10 @@ public class SelectDict : MonoBehaviour
 {
     public Dictionary<int, GameObject> selectDic = new Dictionary<int, GameObject>();
 
+    public bool IsEmpty()
+    {
+        return selectDic.Count == 0;
+    }
     public void Select(GameObject ob)
     {
         selectDic.Add(ob.GetInstanceID(), ob);

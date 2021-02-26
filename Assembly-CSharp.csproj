@@ -74,6 +74,7 @@
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\GlobalSelection.cs" />
     <Compile Include="Assets\HealthBarController.cs" />
+    <Compile Include="Assets\PlayerManager.cs" />
     <Compile Include="Assets\SelectDict.cs" />
     <Compile Include="Assets\UnitManager.cs" />
     <Compile Include="Assets\Utils.cs" />

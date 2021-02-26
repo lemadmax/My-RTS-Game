@@ -6,17 +6,31 @@ public class UnitManager : MonoBehaviour
 {
     public float health;
     public float maximumHealth;
+    public float chargeSpeed;
+    public float walkSpeed;
+    public float angularSpeed;
+    public float attackSpeed;
+    public float attackRange;
+    public float autoDamage;
+
+    public bool  autoAttack;
 
     int group;
-    bool selected;
+    bool selected = false;
+    bool isUnderAttack = false;
+    List<GameObject> targets = new List<GameObject>();
 
     LineRenderer line;
     int segments = 50;
     float radius = 2.5f;
+
+    public void init(int _group)
+    {
+        group = _group;
+    }
+
     void Start()
     {
-        selected = false;
-
         line = gameObject.GetComponent<LineRenderer>();
         line.positionCount = segments + 1;
         line.useWorldSpace = false;
@@ -27,7 +41,7 @@ public class UnitManager : MonoBehaviour
         line.transform.localPosition.Set(0.0f, 0.2f, 0.0f);
         CreatePoints();
         line.enabled = false;
-        group = 0;
+        group = GetComponentInParent<PlayerManager>().group;
     }
 
     // Update is called once per frame
@@ -36,9 +50,46 @@ public class UnitManager : MonoBehaviour
         
     }
 
+    public bool IsUnderAttack()
+    {
+        return isUnderAttack;
+    }
+
+    public bool IsTargetListEmpty()
+    {
+        return targets.Count == 0;
+    }
+
+    public void OnDamage(GameObject ob, float damage)
+    {
+        isUnderAttack = true;
+        health = Mathf.Max(0.0f, health - damage);
+        targets.Add(ob);
+    }
+
+    public void AddTarget(GameObject ob)
+    {
+        targets.Add(ob);
+    }
+
+    public void RemoveTarget(GameObject ob)
+    {
+        targets.Remove(ob);
+    }
+
+    public GameObject GetAnEnemy()
+    {
+        return targets[0];
+    }
+
     public int GetGroup()
     {
         return group;
+    }
+
+    public bool IsSelected()
+    {
+        return selected;
     }
 
     public void Select()
