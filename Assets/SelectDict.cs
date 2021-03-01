@@ -12,13 +12,17 @@ public class SelectDict : MonoBehaviour
     }
     public void Select(GameObject ob)
     {
-        selectDic.Add(ob.GetInstanceID(), ob);
-        ob.GetComponent<UnitManager>().Select();
+        if (ob.GetComponent<UnitManager>().IsAlive())
+        {
+            selectDic.Add(ob.GetInstanceID(), ob);
+            ob.GetComponent<UnitManager>().Select();
+        }
     }
 
     public void Deselect(GameObject ob)
     {
         selectDic.Remove(ob.GetInstanceID());
+        ob.GetComponent<UnitManager>().UnSelect();
     }
 
     public void DeselectAll()
