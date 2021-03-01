@@ -20,6 +20,8 @@ public class movementController : MonoBehaviour
 
     Vector3 destination;
 
+    Vector3 newPosition;
+
     private void Start()
     {
         unitManager = gameObject.GetComponentInParent<UnitManager>();
@@ -32,17 +34,20 @@ public class movementController : MonoBehaviour
         if (unitManager.autoAttack) status = 3;
         else status = 0;
         destination = transform.position;
+        newPosition = transform.position;
         float ap = animator.GetFloat("attackSpeedMultiplier");
     }
 
     void Update()
     {
+        if (!unitManager.IsAlive()) return;
         if (unitManager.IsSelected())
         {
             HandleMouseInput();
             HandleKeyInput();
         }
         CorrectRotation();
+        Debug.Log(unitManager.GetGroup() + ": " + status);
 
         switch (status)
         {
@@ -112,6 +117,14 @@ public class movementController : MonoBehaviour
     {
         if (target != null && (transform.position - target.transform.position).magnitude < unitManager.attackRange)
         {
+            if(!target.GetComponent<UnitManager>().IsAlive())
+            {
+                unitManager.RemoveTarget(target);
+                target = null;
+                destination = transform.position;
+                if (status == 2) status = 0;
+                return;
+            }
             if (animator.GetInteger("states") != 2) animator.SetInteger("states", 2);
             timePeriod += Time.deltaTime;
             if (attackTime <= minimumAttackTime)
@@ -188,10 +201,13 @@ public class movementController : MonoBehaviour
     void CorrectRotation()
     {
         transform.rotation = Quaternion.Euler(0.0f, transform.rotation.eulerAngles.y, 0.0f);
+        //Debug.Log("rotation: " + transform.rotation.eulerAngles);
+        //transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
     }
 
     void RotateToTarget()
     {
+        //Debug.Log(unitManager.GetGroup() + ": " + "rotating to target");
         Vector3 movementDirection = target.transform.position - transform.position;
         //if (movementDirection.sqrMagnitude < unitManager.attackRange) return;
         float angle = Vector3.Angle(movementDirection, transform.forward);
@@ -217,6 +233,7 @@ public class movementController : MonoBehaviour
 
     void RotateToDest()
     {
+        //Debug.Log(unitManager.GetGroup() + ": " + "rotating to dest");
         Vector3 movementDirection = destination - transform.position;
         if (movementDirection.sqrMagnitude < 1f) return;
         float angle = Vector3.Angle(movementDirection, transform.forward);
@@ -244,6 +261,12 @@ public class movementController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collisionInfo)
     {
-        //Debug.Log("hit");
+        if(collisionInfo.gameObject.name == "Terrain")
+        {
+            Debug.Log("hit terrain" + collisionInfo.transform.position.y);
+        }
     }
+
+
+
 }

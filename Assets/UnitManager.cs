@@ -15,9 +15,14 @@ public class UnitManager : MonoBehaviour
 
     public bool  autoAttack;
 
+    public GameObject body;
+    public GameObject deadBody;
+    public GameObject healthBar;
+
     int group;
     bool selected = false;
     bool isUnderAttack = false;
+    bool isAlive = true;
     List<GameObject> targets = new List<GameObject>();
 
     LineRenderer line;
@@ -64,6 +69,10 @@ public class UnitManager : MonoBehaviour
     {
         isUnderAttack = true;
         health = Mathf.Max(0.0f, health - damage);
+        if (health == 0.0f)
+        {
+            OnDeath();
+        }
         targets.Add(ob);
     }
 
@@ -104,6 +113,11 @@ public class UnitManager : MonoBehaviour
         line.enabled = false;
     }
 
+    public bool IsAlive()
+    {
+        return isAlive;
+    }
+
     void CreatePoints()
     {
         float x;
@@ -116,5 +130,25 @@ public class UnitManager : MonoBehaviour
             line.SetPosition(i, new Vector3(x, 0.1f, z));
             angle += (360f / segments);
         }
+    }
+
+    void OnDeath()
+    {
+        isAlive = false;
+        if(selected)
+        {
+            GameManager.GM_instance.GetComponentInChildren<SelectDict>().Deselect(gameObject);
+        }
+        Destroy(body);
+        Destroy(healthBar);
+        Vector3 rotation = transform.rotation.eulerAngles;
+        rotation.x = -90f;
+        Quaternion rot = Quaternion.Euler(rotation);
+        Instantiate(deadBody, transform.position, rot);
+    }
+
+    private void OnDestroy()
+    {
+
     }
 }

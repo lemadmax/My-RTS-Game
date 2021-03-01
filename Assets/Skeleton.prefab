@@ -58,6 +58,10 @@ MonoBehaviour:
   attackRange: 5
   autoDamage: 10
   autoAttack: 1
+  body: {fileID: 379124327674895084}
+  deadBody: {fileID: 1312350616566572245, guid: 5e23eab1527edcf4480a08bfdfad9381,
+    type: 3}
+  healthBar: {fileID: 8848793934411029058}
 --- !u!120 &4391427568963047217
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -378,6 +382,12 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 5579a33aec9e64a4d9c376a095b3b2ad, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f4313a771e05c64d8da7ae6bd19a19f, type: 3}
+--- !u!1 &379124327674895084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 165424, guid: 9f4313a771e05c64d8da7ae6bd19a19f,
+    type: 3}
+  m_PrefabInstance: {fileID: 379124327675059420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &379124327674672372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 403496, guid: 9f4313a771e05c64d8da7ae6bd19a19f,
@@ -493,6 +503,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a38bcbbc2ba69b149b5436f1eab351be, type: 3}
+--- !u!1 &8848793934411029058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 206001444439221592, guid: a38bcbbc2ba69b149b5436f1eab351be,
+    type: 3}
+  m_PrefabInstance: {fileID: 8653356671780208410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3393092205083470461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6269091399809013095, guid: a38bcbbc2ba69b149b5436f1eab351be,
